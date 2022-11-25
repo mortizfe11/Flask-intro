@@ -15,7 +15,7 @@ def user(user = ""):
     return f"Hola usuario {user}!"
 
 @app.route("/products/")
-@app.route("/products/<string:_category>")
+@app.route("/products/<string:_category>/")
 @app.route("/products/<string:_category>/<int:_id>")
 def products(_category = "", _id = 0):
     return render_template("routes.html", category=_category, id=_id)

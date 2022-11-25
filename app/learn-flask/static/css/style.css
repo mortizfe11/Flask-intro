@@ -1,21 +1,45 @@
 html, body {
     margin: 0;
 }
-body{
-    padding: 5px;
-}
+
 table{
     border-collapse: separate;
     border-spacing: 10px;
+    max-width: 800px;
 }
 
 tbody, td, tfoot, tr {
-    border-width: 1!important;
+    border-width: 1px!important;
     border: 1px solid black;
-    padding: 10px;
+    padding: 15px;
 }
+
 thead, th, thead > tr {
     text-align: center;
     border-width: 0!important;
     padding: 5px;
+}
+
+.header{
+    padding: 5px 10px;
+    background-color:burlywood;
+}
+.container-fluid {
+    padding: 10px 0;
+    background-color: bisque;
+}
+.header a {
+    color: #3e270b;
+    text-decoration: none;
+}
+body a, body a:hover {
+    color: brown;
+}
+
+td{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    gap: 5px;
 }
