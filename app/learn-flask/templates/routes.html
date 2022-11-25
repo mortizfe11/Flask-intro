@@ -10,15 +10,17 @@
 </head>
 <body>
     <h2>{{ category.upper() }}</h2>
-    <a href="/products/{{category}}/{{id}}">Products {% if category %} >> {{ category }} {% endif %} >> {{ id }}</a>
+    <a href="/products/{{category}}/{{id}}">Products {% if category %} >> {{ category }} {% endif %}{% if id > 0 %} >> {{ id }}{% endif %}</a>
     <hr>
-    <a href="/products">Productos</a> >>
+    <a href="/products">Productos</a>
     {% if category %}
-    <a href="/products/{{category}}">{{category.capitalize()}}</a> >>
+    >> <a href="/products/{{category}}">{{category.capitalize()}}</a>
     {% endif %}
-    <a href="/products/{{category}}/{{id}}">{{ id }}</a>
+    {% if id > 0 %} 
+    >> <a href="/products/{{category}}/{{id}}">{{ id }}</a>
+    {% endif %}
     <hr>
-    <h3>Producto - {{ id }}</h3>
+    <h3>Productos {% if id > 0 %}- {{ id }}{% endif %}}</h3>
     <hr>
     {% if category == "" %}
     <table border="1">
@@ -32,7 +34,7 @@
                     <a href="#"><h4>Categorías - {{ i }}</h4></a> 
                     <p><strong>Descripción</strong></p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sed?</p>
-                    <img src="./static/images/{{ i }}.png" width="100" alt="pic">
+                    <img src="/static/images/{{i}}.png" width="100" alt="pic">
                 </td>
             </tr>
             {% endfor %}
